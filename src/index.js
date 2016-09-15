@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history';
+import routes from './routes';
 
+// window._________testing = true;
 
-import Detail from './pages/Detail';
-
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
 ReactDOM.render(
-    <Detail />,
+    <Router onUpdate={() => window.scrollTo(0, 0)}>
+        {routes}
+    </Router>,
     document.getElementById('app')
 );

@@ -8,16 +8,18 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            test: /\.js?$/,
+            test: /\.jsx?$/,
             exclude: /node_modules/,
             loaders: ["babel-loader"]
-        }]
+        },
+{ test: /\.css/, loader: "style-loader!css-loader" },
+        ]
     },
     resolve: {
-        extensions: ['', '.js']
+        // extensions: ['.css', '.js']
     },
     output: {
-        path: 'dist',
+        path: '/home/pil0t/Projects/reactThings/projectAttempt2/dist/bundle.js',
         publicPath: '/',
         filename: 'bundle.js'
     },
