@@ -1,4 +1,5 @@
 require('./style.css');
+require('./powr.css');
 import React from 'react';
 
 class App extends React.Component {
