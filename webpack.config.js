@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
@@ -9,8 +10,8 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loaders: ["babel-loader"]
+            loaders: ['react-hot', 'babel'],
+            include: path.join(__dirname, 'src')
         },
         { test: /\.css/, loader: "style-loader!css-loader" },
         ]
@@ -19,7 +20,7 @@ module.exports = {
         // extensions: ['.css', '.js']
     },
     output: {
-        path: '/home/pil0t/Projects/reactThings/projectAttempt2/dist/bundle.js',
+        path: path.join(__dirname, 'dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
