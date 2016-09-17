@@ -7,7 +7,6 @@ import routes from './routes';
 // window._________testing = true;
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
-
 ReactDOM.render(
     <Router onUpdate={() => window.scrollTo(0, 0)}>
         {routes}

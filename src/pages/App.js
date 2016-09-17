@@ -5,12 +5,8 @@ import React from 'react';
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <div className='container-fluid editor-container clearfix'>
-                    <div className='formBuilderSettings' >
-                        {this.props.children}
-                    </div>
-                <div>
+            <div className='formBuilderSettings' id="appSettings">
+                {this.props.children}
             </div>
         )
     }
