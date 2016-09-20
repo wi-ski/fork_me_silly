@@ -17,18 +17,16 @@ module.exports = {
         ]
     },
     resolve: {
-        // extensions: ['.css', '.js']
+        // extensions: ['.js']
     },
     output: {
-        path: path.join(__dirname, 'dist'),
-        publicPath: '/',
+        path: path.join('./dist'),
+        publicPath: 'http://localhost:8080/',
         filename: 'bundle.js'
     },
     devServer: {
         contentBase: './dist',
-        hot: true
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
     ]
 };
