@@ -8,13 +8,9 @@ import Message from './reducers/message'
 
 // window._________testing = true;
 
-class Texteditor extends React.Component{
-  render (){
-    return (
-      <div>"sssaa"</div>
-    );
-  }
-};
+const Texteditor = ({ value }) => (
+  <div contentEditable="true" style=>{value}</div>
+)
 
 var divStyle = {
   height: '100px',
@@ -27,6 +23,7 @@ var divStyle = {
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 const render = () => {
   ReactDOM.render(
+
       <Texteditor value={store.getState()} />,
       document.getElementById('app')
   );
