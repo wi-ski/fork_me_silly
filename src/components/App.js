@@ -1,5 +1,4 @@
-require('./style.css');
-require('./powr.css');
+
 import React from 'react';
 
 
@@ -13,6 +12,11 @@ class App extends React.Component {
     }
 }
 
+const Texteditor = ({ value }) => (
+  <div contentEditable="true" >{value}</div>
+)
+
+
 App.propTypes = {
     children: React.PropTypes.node
 };
@@ -20,4 +24,4 @@ App.propTypes = {
 
 
 
-export default App;
+export default Texteditor;

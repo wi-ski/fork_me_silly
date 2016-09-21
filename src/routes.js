@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import App from './pages/App';
+import App from './components/App';
 import List from './pages/List';
 import Detail from './pages/Detail';
 import User from './pages/User';
