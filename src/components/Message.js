@@ -1,20 +1,20 @@
 import React, { PropTypes } from 'react'
 
-const Message = ({ text, id,onClick }) => (
+const Message = ({ key, text, id, onClick }) => (
   <li
+    key={key}
+    id={id}
     onClick={onClick}
-    style={{
-      textDecoration: read ? 'line-through' : 'strong'
-    }}
+    style={{textDecoration: read ? 'line-through' : 'strong' }}
   >
     {text}
   </li>
 )
 
-Todo.propTypes = {
+Message.propTypes = {
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
 
-export default Todo
+export default Message

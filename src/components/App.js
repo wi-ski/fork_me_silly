@@ -1,27 +1,25 @@
-
 import React from 'react';
-
-
+import MessageList from '../containers/MessageListContainer'
+import MessageInput from '../containers/MessageInputContainer'
+                                        // <div className='formBuilderSettings' id="appSettings">
+                                        //     {this.props.children}
+                                        // </div>
 class App extends React.Component {
     render() {
         return (
-            <div className='formBuilderSettings' id="appSettings">
-                {this.props.children}
+            <div>
+                <MessageList />
+                <MessageInput />
             </div>
         )
     }
 }
 
-const Texteditor = ({ value }) => (
-  <div contentEditable="true" >{value}</div>
-)
-
-
-App.propTypes = {
-    children: React.PropTypes.node
-};
+// App.propTypes = {
+//     // children: React.PropTypes.node
+// };
 
 
 
 
-export default Texteditor;
+export default App;

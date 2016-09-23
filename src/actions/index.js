@@ -1,30 +1,11 @@
-let nextTodoId = 0
-export const addTodo = (text) => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
-  text
-})
-
-
-
-
-export const userSubmitMessage = (text) => ({
+let messageId = 0
+export const submitMessage = (text) => ({
   type: 'NEW_USER_MESSAGE',
-  id: nextTodoId++,
+  id: messageId++,
   text
 })
 
-
-
-
-
-
-export const setVisibilityFilter = (filter) => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-})
-
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
+export const toggleMessage = (id) => ({
+  type: 'MESSAGE_TOGGLED',
   id
 })
