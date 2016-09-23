@@ -1,18 +1,25 @@
 import { connect } from 'react-redux'
 import { submitMessage } from '../actions'
-import MessagesList from '../components/MessagesList'
+import MessageInput from '../components/MessageInput'
 
 const mapStateToProps = (state) => ({
   messages: state.messages
 })
 
-const mapDispatchToProps = (state) => ({
-  keydown: submitMessage
+const mapDispatchToProps = (dispatch) => ({
+  onKeyUp: (event) => {
+    var target = event.target;
+    var text   = target.value;
+    if(event.keyCode === 13){
+        dispatch(submitMessage(text))
+        target.value = "";
+    }
+  }
 })
 
 const MessageListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MessagesList)
+)(MessageInput)
 
 export default MessageListContainer

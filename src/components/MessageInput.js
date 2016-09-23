@@ -1,11 +1,13 @@
 import React, { PropTypes } from 'react'
 
-const MessageInput = ({ value="Hit me",keydown }) => (
-  return <input type="text" onKeyUp={keydown} />
+const MessageInput = ({ onKeyUp }) => (
+  <label>
+    <input type="text" onKeyUp={onKeyUp} defaultValue="Hit me" />
+  </label>
 )
 
 MessageInput.propTypes = {
-  keydown: keydown.func.isRequired
+  onKeyUp: PropTypes.func.isRequired
 }
 
 export default MessageInput

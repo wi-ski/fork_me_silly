@@ -2,10 +2,11 @@ import { connect } from 'react-redux'
 import { toggleMessage } from '../actions'
 import MessagesList from '../components/MessagesList'
 
-const mapStateToProps = (state) => ({
-  messages: state.messages
-})
-
+const mapStateToProps = ( state, props ) => {
+    return {
+      messages: state.messages
+    }
+}
 const mapDispatchToProps = (state) => ({
   onMessageClick: toggleMessage
 })

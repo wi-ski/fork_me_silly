@@ -5,7 +5,7 @@ const MessagesList = ({ messages }) => (
 // const MessagesList = ({ messages, onMessageClick }) => (
   <ul>
     {messages.map( (_message,idx) =>(
-        <Message key={idx} text={_message.text} onClick={ () => onMessageClick(_message.id) } />
+        <Message key={idx} text={_message.text} />
       )
     )}
   </ul>

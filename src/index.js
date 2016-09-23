@@ -8,11 +8,8 @@ import { Provider } from 'react-redux'
 import Message from './reducers/message'
 import App from './components/App'
 
-import reducer from './reducers'
-
 // const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
-const store = createStore(reducer);
-// const store = createStore(reducer);
+const store = createStore(Message);
 
 render(
     <Provider store={store}>
