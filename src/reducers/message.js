@@ -1,4 +1,5 @@
 const Message = (state, action) =>  {
+    debugger
   switch (action.type){
     case 'NEW_USER_MESSAGE':
         return {
@@ -17,7 +18,7 @@ const Message = (state, action) =>  {
             toggled_message: action.message_id,
         }
   default:
-      return [{text:"Hello world!"}]
+      return [{text:"Hello world!",viewed:false,id:1331}]
   }
 }
 
