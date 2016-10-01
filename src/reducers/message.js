@@ -1,5 +1,4 @@
 const Message = (state, action) =>  {
-  debugger
   switch (action.type){
     case 'NEW_USER_MESSAGE':
         return {
