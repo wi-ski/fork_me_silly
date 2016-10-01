@@ -10,7 +10,7 @@ import styles from './app.css';
 class SideBar extends React.Component {
     render() {
         return (
-            <div className='gh-side-bar'>
+            <div styleName='ghsidebar' className='foo'>
                 This text should be green
             </div>
         )
