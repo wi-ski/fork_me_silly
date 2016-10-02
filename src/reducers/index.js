@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import messages from './message.js'
+import Messages from './message'
+import MenuItems from './MenuItems'
 
 const reducer = combineReducers({
-    messages
+    Messages,
+    MenuItems
 })
 
 export default reducer

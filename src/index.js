@@ -5,11 +5,19 @@ import { ReactDOM, render } from 'react-dom';
 // import routes from './routes';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import Message from './reducers/message'
-import App from './components/App'
+import reducer from './reducers'
+import App from './components/App/'
 
 // const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
-const store = createStore(Message);
+const store = createStore(reducer,{
+                                    MenuItems:[
+                                                {id:1},
+                                                {id:2},
+                                                {id:3},
+                                                {id:4}
+                                    ],
+                                    Messages:[]
+                                   });
 
 render(
     <Provider store={store}>

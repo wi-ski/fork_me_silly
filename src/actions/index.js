@@ -11,3 +11,8 @@ export const toggleMessage = (id) => ({
   type: 'MESSAGE_TOGGLED',
   id
 })
+
+export const toggleSettingsMenuItem = (index) => ({
+  type: 'SETTINGS_MENU_ITEM_TOGGLED',
+  index
+})

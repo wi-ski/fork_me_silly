@@ -4,18 +4,23 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './app.css';
+import ActiveSettingsContainer from '../../containers/ActiveSettingsContainer'
                                         // <div className='formBuilderSettings' id="appSettings">
                                         //     {this.props.children}
                                         // </div>
+/*
 class SideBar extends React.Component {
     render() {
         return (
-            <div styleName='ghsidebar' className='foo'>
+            <div className={styles.ghsidebar}>
+                <ul>
+                </ul>
                 This text should be green
             </div>
         )
     }
 }
+*/
 
 
 
@@ -23,11 +28,20 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider>
-                <SideBar />
+                <ActiveSettingsContainer />
             </MuiThemeProvider>
         )
     }
 }
+
+
+      /* multi
+         <Route path="/" handler={App}>
+           <DefaultRoute handler={Home} />
+           <Route name="about" handler={About} />
+           <Route name="contact" handler={Contact} />
+         </Route>
+         comment */
 
 // App.propTypes = {
 //     // children: React.PropTypes.node
