@@ -15,10 +15,12 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
-                test: /\.css$/,
-                loaders: [
+                test: /\.scss$/,
+                loaders:[
                     'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+                    'resolve-url',
+                    'sass?sourceMap'
                 ]
             }
         ]

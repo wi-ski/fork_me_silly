@@ -10,12 +10,15 @@ import App from './components/App/'
 
 // const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 const store = createStore(reducer,{
-                                    MenuItems:[
+                                    MenuItems:{
+                                        lastToggled:NaN,
+                                        items:[
                                                 {id:1},
                                                 {id:2},
                                                 {id:3},
                                                 {id:4}
-                                    ],
+                                        ]
+                                    },
                                     Messages:[]
                                    });
 

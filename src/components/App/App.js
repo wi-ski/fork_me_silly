@@ -3,7 +3,7 @@ import React from 'react';
 // import MessageInput from '../containers/MessageInputContainer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import styles from './app.css';
+import styles from './app.scss';
 import ActiveSettingsContainer from '../../containers/ActiveSettingsContainer'
                                         // <div className='formBuilderSettings' id="appSettings">
                                         //     {this.props.children}

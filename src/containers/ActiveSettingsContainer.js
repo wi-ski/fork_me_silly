@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import SettingsMenu from '../components/SettingsMenu'
-import {toggleSettingsMenuItem} from '../actions'
+import { toggleSettingsMenuItem } from '../actions'
 
 const mapStateToProps = ( state, props ) => {
     return {
-      menuItems: state.MenuItems
+      menuItems: state.MenuItems.items
     }
 }
 const mapDispatchToProps = (dispatch) => ({

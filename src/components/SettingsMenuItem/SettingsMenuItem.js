@@ -1,10 +1,17 @@
 import React from 'react';
-// import MessageList from '../containers/MessageListContainer'
-// import MessageInput from '../containers/MessageInputContainer'
-const SettingsMenuItem = ({toggled,onClick,idx}) => {
+import style from './style.scss'
 
+
+
+const itemStyle = (menuItem) => {
+    return {
+        height:(menuItem.toggled ? '200px' : '100px')
+    }
+}
+
+const SettingsMenuItem = ({menuItem,onClick,idx}) => {
     return (
-        <li className={toggled ? 'toggled' : 'inactive'} onClick={() => ( onClick(idx) )} >
+        <li style={itemStyle(menuItem)} className={style.menuItem} onClick={() => ( onClick(idx) )} >
             Im a menu item
         </li>
     )
