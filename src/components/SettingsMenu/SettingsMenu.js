@@ -3,9 +3,9 @@ import SettingsMenuItem from '../SettingsMenuItem';
 
 
 
-const itemStyles = () => ({
-
-});
+const itemStyles = () => {
+    return {}
+};
 
 const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
     return (<ul style={itemStyles()} className='sidebar-nav'>

@@ -13,10 +13,12 @@ const store = createStore(reducer,{
                                     MenuItems:{
                                         lastToggled:NaN,
                                         items:[
-                                                {id:1},
-                                                {id:2},
-                                                {id:3},
-                                                {id:4}
+                                                {id:1,itemTitle:'Title and Description',params:{}},
+                                                {id:2,itemTitle:'Form Elements'},
+                                                {id:3,itemTitle:'Form Elements2'},
+                                                {id:4,itemTitle:'Form Elements3'},
+                                                {id:5,itemTitle:'Form Elements4'},
+                                                {id:6,itemTitle:'Form Elements5'},
                                         ]
                                     },
                                     Messages:[]

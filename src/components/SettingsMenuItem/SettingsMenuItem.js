@@ -5,16 +5,16 @@ import style from './style.scss'
 
 const itemStyle = (menuItem) => {
     return {
-        // height:(menuItem.toggled ? '200px' : '100px')
-        // height:(menuItem.toggled ? '200px' : '100px')
+        color:(menuItem.toggled ? 'red' : 'green'),
+        height:(menuItem.toggled ? 'auto' : '100px')
     }
 }
 
 const SettingsMenuItem = ({menuItem,onClick,idx}) => {
     return (
-        <li style={itemStyle(menuItem)} className={style.menuItem} onClick={() => ( onClick(idx) )} >
-            <a href="#">
-                Im a menu item
+        <li className={style.menuItem} onClick={() => ( onClick(idx) )} >
+            <a style={itemStyle(menuItem)} href="#">
+                {menuItem.itemTitle}
             </a>
         </li>
     )
