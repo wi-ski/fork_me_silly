@@ -8,7 +8,7 @@ const itemStyles = () => ({
 });
 
 const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
-    return (<ul style={itemStyles()}>
+    return (<ul style={itemStyles()} className='sidebar-nav'>
             {
                 menuItems.map((menuItem,idx)=>{
                     return (
