@@ -13,7 +13,7 @@ const store = createStore(reducer,{
                                     MenuItems:{
                                         lastToggled:NaN,
                                         items:[
-                                                {id:1,itemTitle:'Title and Description',params:{}},
+                                                {id:1,itemTitle:'Title and Description'},
                                                 {id:2,itemTitle:'Form Elements'},
                                                 {id:3,itemTitle:'Form Elements2'},
                                                 {id:4,itemTitle:'Form Elements3'},

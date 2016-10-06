@@ -1,8 +1,6 @@
 import React from 'react';
 import style from './style.scss'
 
-
-
 const itemStyle = (menuItem) => {
     return {
         color:(menuItem.toggled ? 'red' : 'green'),
