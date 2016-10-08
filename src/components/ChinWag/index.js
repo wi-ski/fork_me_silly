@@ -5,7 +5,7 @@ import MessageInput from './MessageInput'
 
 const ChinWag = ({ onKeyUp, messages }) => {
     return (
-        <div className="col-md-4">
+        <div id='chinwag'>
             <MessagesList messages={messages} />
             <MessageInput onKeyUp={onKeyUp} />
         </div>

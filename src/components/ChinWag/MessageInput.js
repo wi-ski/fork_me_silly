@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 const MessageInput = ({ onKeyUp }) => (
   <label>
-    <input className="shitbag" type="text" onKeyUp={onKeyUp} defaultValue="Hit me" />
+    <input type="text" onKeyUp={onKeyUp} defaultValue="Hit me" />
   </label>
 )
 

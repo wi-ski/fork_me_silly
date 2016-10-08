@@ -9,8 +9,8 @@ const itemStyles = () => {
 
 const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
     return (
-        <div styleName='side-bar-styles' id='side-bar'>
-            <ul style={itemStyles()} className='sidebar-nav'>
+        <div styleName='side-bar-styles' id='side-bar-container'>
+            <ul styleName='settings-menu-styles' className='sidebar-nav'>
                 {
                     menuItems.map((menuItem,idx)=>{
                         return (

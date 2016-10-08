@@ -22,7 +22,9 @@ class App extends React.Component {
                 <div id='app-view-container' styleName='app-view-container-styles'>
                   <div className='container'>
                     <div className="row">
-                      <ChinWag />
+                      <div className="col-md-4 col-md-offset-4">
+                        <ChinWag />
+                      </div>
                     </div>
                   </div>
                 </div>

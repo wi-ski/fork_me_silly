@@ -4,6 +4,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 import App from './components/App/'
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 // import { Router, useRouterHistory } from 'react-router';
 // import { createHashHistory } from 'history';
 // import routes from './routes';
