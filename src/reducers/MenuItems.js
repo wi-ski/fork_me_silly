@@ -20,7 +20,12 @@ const MenuItems = (state = initialState, action) =>  {
           // lastToggled: actionIdx,
           items:items
         };
-
+        return Object.assign({},state,newState);
+    case 'SETTINGS_MENU_COLOR_CHANGE':
+        var newState = {
+          color:action.color
+        }
+        console.log(Object.assign({},state,newState))
         return Object.assign({},state,newState);
   default:
       return state;

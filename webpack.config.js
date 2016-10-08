@@ -26,7 +26,14 @@ module.exports = {
         ]
     },
     resolve: {
-        // extensions: ['.js']
+        alias: {
+                       src: __dirname + '/src',
+                       components: __dirname + '/src/components',
+                       actions: __dirname + '/src/actions',
+                       containers: __dirname + '/src/containers',
+                       reducers: __dirname + '/src/reducers',
+                       modules: __dirname + '/src/modules'
+               }
     },
     output: {
         path: path.join('./dist'),

@@ -21,3 +21,9 @@ export const toggleSettingsMenuItem = (index) => {
       index
     }
 }
+export const settingsMenuColorChange = (color) => {
+    return {
+      type: 'SETTINGS_MENU_COLOR_CHANGE',
+      color
+    }
+}

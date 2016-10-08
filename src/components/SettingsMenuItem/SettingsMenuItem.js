@@ -1,16 +1,12 @@
 import React from 'react';
 import style from './style.scss'
-
-
-
-import {List, ListItem} from 'material-ui/List';
+import {ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 import Toggle from 'material-ui/Toggle';
+import {ColorPicker} from 'components/ColorPicker'
 
-
-
+import {SketchPicker} from 'react-color';
 
 
 
@@ -21,26 +17,36 @@ const itemStyle = (menuItem) => {
     }
 }
 
+const handleNestedListToggle = (ListItem) => {
+    // ListItem is the containing list item, not the nested one.  You can access the nested child by ListItem.nestedItems
+
+}
+
+const handleChangeComplete = (color) => {
+    console.log('Change complete fired',color)
+}
+
 const SettingsMenuItem = ({menuItem,onClick,idx}) => {
     return (
-        <li className={style.menuItem} onClick={() => ( onClick(idx) )} >
-            <List>
-              <Subheader>General</Subheader>
               <ListItem
                 primaryText="Profile photo"
                 secondaryText="Change your Google+ profile photo"
+                open={true}
+                onNestedListToggle={handleNestedListToggle}
+                nestedItems={[
+                  <ListItem key={1} primaryText="Drafts" />,
+                  <SketchPicker
+                    key={2}
+                    onChangeComplete={ handleChangeComplete }
+                  />
+                ]}
               />
-              <ListItem
-                primaryText="Show your status"
-                secondaryText="Your status is visible to everyone you use with"
-              />
-            </List>
-            <a style={itemStyle(menuItem)} href="#">
-                {menuItem.itemTitle}
-            </a>
-            <Divider />
-        </li>
     )
 }
 
+/*
+             <a style={itemStyle(menuItem)} href="#">
+                {menuItem.itemTitle}
+            </a>
+*/
 export default SettingsMenuItem;
