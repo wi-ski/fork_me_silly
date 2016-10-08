@@ -10,7 +10,7 @@ const itemStyles = () => {
     return {}
 };
 
-const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
+const SettingsMenu = ({ menuItems, activeId,onColorChange }) => {
     return (
         <div styleName='side-bar-styles' id='side-bar-container'>
             <List styleName='settings-menu-styles' className='sidebar-nav'>
@@ -18,7 +18,11 @@ const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
                     menuItems.map((menuItem,idx)=>{
                         return (
                             <div key={idx} >
-                                <SettingsMenuItem menuItem={menuItem} idx={idx} onClick={() => onSettingsComponentClick(idx)} />
+                                <SettingsMenuItem 
+                                    menuItem = { menuItem }
+                                    idx = { idx }
+                                    onColorChange = { onColorChange }
+                                    selectedColor = { menuItem.selectedColor } />
                                 <Divider />
                             </div>
                         )

@@ -1,8 +1,13 @@
-const Messages = (state, action) =>  {
+const initialState = {
+    Messages:[]
+}
+
+const Application = (state=initialState, action) =>  {
   switch (action.type){
     case 'NEW_USER_MESSAGE':
+    debugger
         return {
-            Messages: state.Messages.concat([action.message]),
+            Messages: state.Application.concat([action.message]),
         }
     // case 'MESSAGE_READ':
     //     return {
@@ -15,8 +20,8 @@ const Messages = (state, action) =>  {
     //         toggled_message: action.message_id,
     //     }
   default:
-      return {Messages:[{text:"Hello world!",viewed:false,id:1331}]}
+      return state
   }
 }
 
-export default Messages;
+export default Application;

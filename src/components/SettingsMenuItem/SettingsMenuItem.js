@@ -5,7 +5,6 @@ import Subheader from 'material-ui/Subheader';
 import Checkbox from 'material-ui/Checkbox';
 import Toggle from 'material-ui/Toggle';
 import {ColorPicker} from 'components/ColorPicker'
-
 import {SketchPicker} from 'react-color';
 
 
@@ -22,11 +21,8 @@ const handleNestedListToggle = (ListItem) => {
 
 }
 
-const handleChangeComplete = (color) => {
-    console.log('Change complete fired',color)
-}
 
-const SettingsMenuItem = ({menuItem,onClick,idx}) => {
+const SettingsMenuItem = ({menuItem,onColorChange,idx,selectedColor}) => {
     return (
               <ListItem
                 primaryText="Profile photo"
@@ -37,7 +33,8 @@ const SettingsMenuItem = ({menuItem,onClick,idx}) => {
                   <ListItem key={1} primaryText="Drafts" />,
                   <SketchPicker
                     key={2}
-                    onChangeComplete={ handleChangeComplete }
+                    onChangeComplete={ onColorChange }
+                    color={selectedColor}
                   />
                 ]}
               />

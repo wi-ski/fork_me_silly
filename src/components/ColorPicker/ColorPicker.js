@@ -10,7 +10,6 @@ class ColorPicker extends React.Component {
     console.log("Change complete",color)
     this.setState({ background: color.hex });
   }
-
   handleOnChange(color) {
     console.log(color)
   }
@@ -18,7 +17,7 @@ class ColorPicker extends React.Component {
   render() {
     return (
       <SketchPicker
-        color={ this.state.background }
+        color={ this.props.color }
         onChangeComplete={ this.handleChangeComplete }
       />
     );

@@ -1,9 +1,9 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import ActiveSettingsContainer from '../../containers/ActiveSettingsContainer'
-import ChinWag from '../../containers/ChinWagContainer'
-import WalkThrough from '../../modules/WalkThrough'
+import ActiveSettingsContainer from 'containers/ActiveSettingsContainer'
+import ChinWag from 'containers/ChinWagContainer'
+import WalkThrough from 'modules/WalkThrough'
 import style from './style.scss'
 import CSSModules from 'react-css-modules';
 
@@ -19,6 +19,9 @@ class App extends React.Component {
             <MuiThemeProvider>
               <div id='application' styleName='app-styles'>
                 <ActiveSettingsContainer />
+
+
+
                 <div id='app-view-container' styleName='app-view-container-styles'>
                   <div className='container'>
                     <div className="row">
@@ -29,6 +32,7 @@ class App extends React.Component {
                   </div>
                 </div>
               </div>
+
             </MuiThemeProvider>
         )
     }
@@ -42,10 +46,6 @@ class App extends React.Component {
            <Route name="contact" handler={Contact} />
          </Route>
          comment */
-
-// App.propTypes = {
-//     // children: React.PropTypes.node
-// };
 
 export default CSSModules(App, style);
 
