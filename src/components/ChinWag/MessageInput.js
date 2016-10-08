@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 
-const MessageInput = ({ onKeyUp }) => (
+const MessageInput = ({ onKeyUp, style}) => (
   <label>
-    <input type="text" onKeyUp={onKeyUp} defaultValue="Hit me" />
+    <input type="text" onKeyUp={onKeyUp} defaultValue="Hit me" style={style} />
   </label>
 )
 

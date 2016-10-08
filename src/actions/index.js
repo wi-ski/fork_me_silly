@@ -16,17 +16,17 @@ var _actions = {
         id
       }
   },
-
-   toggleSettingsMenuItem:(index) => {
+   toggleSettingsMenuItem:(itemIdx) => {
       return {
         type: 'SETTINGS_MENU_ITEM_TOGGLED',
-        index
+        itemIdx
       }
   },
-   settingsMenuColorChange:(color) => {
+   settingsValueChange:(itemKey,value) => {
       return {
-        type: 'SETTINGS_MENU_COLOR_CHANGE',
-        color
+        type: 'SETTINGS_VALUE_CHANGED',
+        itemKey,
+        value
       }
   }
 }

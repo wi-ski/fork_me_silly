@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import Message from './Message'
 
-const MessagesList = ({ messages }) => (
-  <ul className="nav nav-list">
+const MessagesList = ({ messages, style }) => (
+  <ul className="nav nav-list" style={style} >
     {messages.map( (_message,idx) =>(
         <Message key={idx} text={_message.text} />
       )

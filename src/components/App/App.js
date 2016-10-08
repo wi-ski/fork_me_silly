@@ -19,9 +19,6 @@ class App extends React.Component {
             <MuiThemeProvider>
               <div id='application' styleName='app-styles'>
                 <ActiveSettingsContainer />
-
-
-
                 <div id='app-view-container' styleName='app-view-container-styles'>
                   <div className='container'>
                     <div className="row">

@@ -10,19 +10,19 @@ const itemStyles = () => {
     return {}
 };
 
-const SettingsMenu = ({ menuItems, activeId,onColorChange }) => {
+const SettingsMenu = ({ stylingOptions, activeId, onChange }) => {
     return (
         <div styleName='side-bar-styles' id='side-bar-container'>
             <List styleName='settings-menu-styles' className='sidebar-nav'>
                 {
-                    menuItems.map((menuItem,idx)=>{
+                    Object.keys(stylingOptions).map((menuItemKey,idx)=>{
                         return (
                             <div key={idx} >
-                                <SettingsMenuItem 
-                                    menuItem = { menuItem }
-                                    idx = { idx }
-                                    onColorChange = { onColorChange }
-                                    selectedColor = { menuItem.selectedColor } />
+                                <SettingsMenuItem
+                                    menuItemKey = { menuItemKey }
+                                    menuItem = { stylingOptions[menuItemKey] }
+                                    onChange = {(val) => {onChange(menuItemKey,val)} }
+                                />
                                 <Divider />
                             </div>
                         )

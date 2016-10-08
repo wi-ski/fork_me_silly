@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import SettingsMenu from 'components/SettingsMenu'
 import { toggleSettingsMenuItem } from 'actions'
-import { settingsMenuColorChange } from 'actions'
+import { settingsValueChange } from 'actions'
 
 const mapStateToProps = ( state, props ) => {
     return {
-      menuItems: state.Settings.items,
+      stylingOptions: state.Settings.stylingOptions
     }
 }
 
@@ -13,8 +13,8 @@ const mapDispatchToProps = (dispatch) => ({
   onSettingsComponentClick: (id) => {
     dispatch(toggleSettingsMenuItem(id))
   },
-  onColorChange: (color) => {
-    dispatch(settingsMenuColorChange(color.hex))
+  onChange: (styleOptKey,value) => {
+    dispatch(settingsValueChange(styleOptKey,value))
   }
 })
 

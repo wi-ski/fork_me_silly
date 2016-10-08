@@ -8,33 +8,24 @@ import {ColorPicker} from 'components/ColorPicker'
 import {SketchPicker} from 'react-color';
 
 
-
-const itemStyle = (menuItem) => {
-    return {
-        color:(menuItem.toggled ? 'red' : 'green'),
-        height:(menuItem.toggled ? 'auto' : '100px')
-    }
-}
-
 const handleNestedListToggle = (ListItem) => {
+    console.log("NESTED TOGGLED",arguments)
     // ListItem is the containing list item, not the nested one.  You can access the nested child by ListItem.nestedItems
-
 }
 
 
-const SettingsMenuItem = ({menuItem,onColorChange,idx,selectedColor}) => {
+const SettingsMenuItem = ({menuItem,onChange}) => {
     return (
               <ListItem
-                primaryText="Profile photo"
-                secondaryText="Change your Google+ profile photo"
-                open={true}
+                primaryText={menuItem.primaryText}
+                secondaryText={menuItem.secondaryText}
                 onNestedListToggle={handleNestedListToggle}
                 nestedItems={[
-                  <ListItem key={1} primaryText="Drafts" />,
+                  // <ListItem key={1} primaryText="Drafts" />,
                   <SketchPicker
                     key={2}
-                    onChangeComplete={ onColorChange }
-                    color={selectedColor}
+                    onChangeComplete={(color)=> {onChange(color.hex)} }
+                    color={menuItem.value}
                   />
                 ]}
               />

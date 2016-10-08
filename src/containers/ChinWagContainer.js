@@ -4,11 +4,10 @@ import ChinWag from '../components/ChinWag'
 
 const mapStateToProps = (state) => {
   return {
-  style:{
-    color:state.Settings.selectedColor
-  },
-  messages: state.Application.Messages
-}}
+    styles:state.Settings.stylingOptions,
+    messages: state.Application.Messages
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   onMessageClick: 'PUT SOMETHING HERE',

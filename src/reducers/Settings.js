@@ -1,27 +1,47 @@
 // import UpdateState from '../helpers/StateUpdate'
 const initialState = {
-    selectedColor:'#fff',
-    // lastToggled:NaN,
-    items:[
-            {id:1,itemTitle:'Title and Description',selectedColor:'#fff'},
-            {id:2,itemTitle:'Form Elements',selectedColor:'#ggg'},
-            {id:3,itemTitle:'Form Elements2',selectedColor:'#eee'},
-            {id:4,itemTitle:'Form Elements3',selectedColor:'#bbb'},
-            {id:5,itemTitle:'Form Elements4',selectedColor:'#fff'},
-            {id:6,itemTitle:'Form Elements5',selectedColor:'#fff'}
-    ]
+  stylingOptions:{
+    container:{
+      'toggled':false,
+      'primaryText':'Font Color',
+      'secondaryText':'Customize your font color...',
+      'valueKey':'borderColor',
+      'value':'#010000',
+      'type':'color-picker',
+      'componentName':'ColorPicker',
+    },
+    messages:{
+      'toggled':false,
+      'primaryText':'Border Color',
+      'secondaryText':'Customize your border color...',
+      'value':'#010000',
+      'valueKey':'color',
+      'type':'color-picker',
+      'componentName':'ColorPicker',
+      'cssRule':'borderColor',
+    },
+    input:{
+      'toggled':false,
+      'primaryText':'Input Font Color',
+      'secondaryText':'Customize your border color...',
+      'valueKey':'color',
+      'value':'#010000',
+      'type':'color-picker',
+      'componentName':'ColorPicker',
+    }
+  }
 };
 
 const Settings = (state=initialState, action) =>  {
-  var alertNewState = function(_state) {
-    console.log('State change',state,_state);
-    return (Object.assign({},state,_state));
+
+  var alertAndAssign = function(newState) {
+    console.log('State change',state,newState);
+    return Object.assign({},state,newState);
   };
 
   switch (action.type){
     case 'SETTINGS_MENU_ITEM_TOGGLED':
         var actionIdx = action.index;
-
         var items = state.items.map(function(menuItemObj,index){
           menuItemObj.toggled = (index === actionIdx);
           return menuItemObj;
@@ -31,14 +51,33 @@ const Settings = (state=initialState, action) =>  {
           items:items
         };
 
-        return alertNewState(newState)
-    case 'SETTINGS_MENU_COLOR_CHANGE':
+        return alertAndAssign(newState)
+    case 'SETTINGS_VALUE_CHANGED':
+        var itemKey = action.itemKey;
+        var newValue = action.value;
+
+        var newItems = {};
+        debugger
+        Object.keys(state.stylingOptions).forEach((menuItemKey,idx) => {
+          var menuItem = state.stylingOptions[menuItemKey];
+
+          var newItem = (menuItemKey === itemKey ?
+                      Object.assign(
+                        {},
+                        menuItem,
+                        {value:newValue}
+                      )
+                      :
+                      menuItem
+                  )
+
+          newItems[menuItemKey] = newItem;
+        });
 
         var newState = {
-          selectedColor:action.color
+          stylingOptions:newItems
         };
-
-        return alertNewState(newState);
+        return alertAndAssign(newState);
   default:
       return state;
   }
