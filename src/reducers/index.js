@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import Messages from './message'
+import Messages from './Messages'
 import MenuItems from './MenuItems'
 
 const reducer = combineReducers({

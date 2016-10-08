@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './app.scss';
 import ActiveSettingsContainer from '../../containers/ActiveSettingsContainer'
+import ChinWag from '../../containers/ChinWagContainer'
 import WalkThrough from '../../modules/WalkThrough'
 
 
@@ -16,7 +17,10 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider>
+              <div className="row">
                 <ActiveSettingsContainer />
+                <ChinWag />
+              </div>
             </MuiThemeProvider>
         )
     }

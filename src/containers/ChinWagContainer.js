@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
 import { submitMessage } from '../actions'
-import MessageInput from '../components/MessageInput'
+import ChinWag from '../components/ChinWag'
 
-const mapStateToProps = (state) => ({
-  messages: state.messages
-})
+const mapStateToProps = (state) => {
+  return {
+  messages: state.Messages.Messages
+}}
 
 const mapDispatchToProps = (dispatch) => ({
+  onMessageClick: 'PUT SOMETHING HERE',
   onKeyUp: (event) => {
     var target = event.target;
     var text   = target.value;
@@ -17,9 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-const MessageListContainer = connect(
+const ChinWagContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MessageInput)
+)(ChinWag)
 
-export default MessageListContainer
+export default ChinWagContainer

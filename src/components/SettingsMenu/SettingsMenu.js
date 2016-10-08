@@ -1,14 +1,12 @@
 import React from 'react';
 import SettingsMenuItem from '../SettingsMenuItem';
 
-
-
 const itemStyles = () => {
     return {}
 };
 
 const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
-    return (<ul style={itemStyles()} className='sidebar-nav'>
+    return (<div className="col-md-2"><ul style={itemStyles()} className='sidebar-nav'>
             {
                 menuItems.map((menuItem,idx)=>{
                     return (
@@ -16,7 +14,7 @@ const SettingsMenu = ({ menuItems, activeId,onSettingsComponentClick }) => {
                     )
                 })
             }
-        </ul>)
+        </ul></div>)
 }
 
 

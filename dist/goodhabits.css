@@ -123,8 +123,8 @@ div.container#appContainer {
     position: relative;
 }
 
-div.container#appContainer .sidebar-wrapper{
-    width:100vw;
+div.container .sidebar-wrapper{
+    /*width:100vw;*/
     height: 100vh;
     position: relative;
 }
