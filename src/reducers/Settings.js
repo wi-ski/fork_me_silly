@@ -56,8 +56,7 @@ const Settings = (state=initialState, action) =>  {
         var itemKey = action.itemKey;
         var newValue = action.value;
 
-        var newItems = {};
-        debugger
+        var newItems = {};        
         Object.keys(state.stylingOptions).forEach((menuItemKey,idx) => {
           var menuItem = state.stylingOptions[menuItemKey];
 
@@ -85,4 +84,3 @@ const Settings = (state=initialState, action) =>  {
 }
 
 export default Settings;
-

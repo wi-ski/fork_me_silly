@@ -1,27 +1,21 @@
 import React from 'react';
 import Slider from 'material-ui/Slider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-class Slider extends React.Component {
+const muiTheme = getMuiTheme({
+  slider: {
+    trackColor: 'yellow',
+    selectionColor: 'green'
+  },
+});
 
-  constructor(props) {
-    super(props);
-  }
-  handleChangeComplete(color) {
-    console.log("Change complete",color)
-    this.setState({ background: color.hex });
-  }
-  handleOnChange(color) {
-    console.log(color)
-  }
+const theSlider = () => (
+  <div>
+    <MuiThemeProvider muiTheme={muiTheme}>
+        <Slider />
+    </MuiThemeProvider>
+  </div>
+);
 
-  render() {
-    return (
-      <Slider
-        color={ this.props.color }
-        onChangeComplete={ this.handleChangeComplete }
-      />
-    );
-  }
-}
-
-export default Slider
+export default theSlider
