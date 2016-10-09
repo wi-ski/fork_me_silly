@@ -17,10 +17,11 @@ const translateStyles = (styleObj) => {
 const ChinWag = ({ onKeyUp, messages, styles }) => {
     var _style = translateStyles(styles)
     return (
-        <div id='chinwag' style={_style.container} >
+        <div id='chinwag' style={_style.container} className={style.chatContainerStyles}>
             <MessagesList messages={messages} style={_style.messages} />
-            <MessageInput  onKeyUp={onKeyUp} style={_style.input}/>
+            <MessageInput  onKeyUp={onKeyUp} style={_style.input} />
         </div>
     )
 }
 export default CSSModules(ChinWag, style);
+

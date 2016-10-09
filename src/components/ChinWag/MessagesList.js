@@ -1,8 +1,12 @@
 import React, { PropTypes } from 'react'
 import Message from './Message'
+import CSSModules from 'react-css-modules';
+import style from './style.scss'
 
-const MessagesList = ({ messages, style }) => (
-  <ul className="nav nav-list" style={style} >
+  // <ul className="nav nav-list" style={style} styleName='messages-list-styles' >
+
+const MessagesList = ({ messages, _style }) => (
+  <ul className={"nav nav-list " + style.messageListStyles} style={_style} className={style.messageListStyles} >
     {messages.map( (_message,idx) =>(
         <Message key={idx} text={_message.text} />
       )
@@ -15,5 +19,6 @@ MessagesList.propTypes = {
     text: PropTypes.string.isRequired
   }).isRequired).isRequired
 }
+export default MessagesList;
+// export default CSSModules(MessagesList, style);
 
-export default MessagesList

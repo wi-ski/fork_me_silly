@@ -5,6 +5,7 @@ class ColorPicker extends React.Component {
 
   constructor(props) {
     super(props);
+
   }
   handleChangeComplete(color) {
     console.log("Change complete",color)

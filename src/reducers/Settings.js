@@ -28,6 +28,15 @@ const initialState = {
       'value':'#010000',
       'type':'color-picker',
       'componentName':'ColorPicker',
+    },
+    borderRadius:{
+      'toggled':false,
+      'primaryText':'Rounded messages',
+      'secondaryText':'Customize your border radius...',
+      'valueKey':'border-radius',
+      'value':'0px',
+      'type':'slider',
+      'componentName':'SliderValue', //(?)
     }
   }
 };
@@ -57,7 +66,6 @@ const Settings = (state=initialState, action) =>  {
         var newValue = action.value;
 
         var newItems = {};
-        debugger
         Object.keys(state.stylingOptions).forEach((menuItemKey,idx) => {
           var menuItem = state.stylingOptions[menuItemKey];
 

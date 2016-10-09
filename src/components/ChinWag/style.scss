@@ -1,5 +1,23 @@
-#chinwag{
-  .chat{
+$defaultChatBoxHeight:200px;
+$defaultBackgroundColor:green;
+
+.chatContainerStyles {
     color:black;
-  }
+    width:250px;
+}
+
+.messageListStyles {
+    height: $defaultChatBoxHeight;
+    max-height:$defaultChatBoxHeight;
+    overflow-y: scroll;
+    background-color:$defaultBackgroundColor;
+    list-style:none;
+}
+
+.messageInputStyles {
+
+}
+
+.messageStyles {
+
 }
