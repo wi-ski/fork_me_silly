@@ -6,7 +6,7 @@ import ChinWag from 'containers/ChinWagContainer'
 import WalkThrough from 'modules/WalkThrough'
 import style from './style.scss'
 import CSSModules from 'react-css-modules';
-import {theSlider} from 'components/Slider';
+import SliderControlled from 'components/Slider';
 
 class App extends React.Component {
     componentDidMount() {
@@ -20,7 +20,7 @@ class App extends React.Component {
             <MuiThemeProvider>
               <div id='application' styleName='app-styles'>
                 <ActiveSettingsContainer />
-                <theSlider />
+                <SliderControlled />
                 <div id='app-view-container' styleName='app-view-container-styles'>
                   <div className='container'>
                     <div className="row">

@@ -1,2 +1,2 @@
-import theSlider from './Slider.js'
-export default theSlider
+import SliderControlled from './Slider.js'
+export default SliderControlled
