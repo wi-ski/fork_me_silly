@@ -1,5 +1,6 @@
 import React from 'react';
 import SettingsMenuItem from '../SettingsMenuItem';
+import SliderControlled from 'components/Slider';
 import style from './style.scss'
 import CSSModules from 'react-css-modules';
 import {List} from 'material-ui/List';
@@ -29,6 +30,7 @@ const SettingsMenu = ({ stylingOptions, activeId, onChange }) => {
                     })
                 }
             </List>
+            <SliderControlled />
         </div>
     )
 }
