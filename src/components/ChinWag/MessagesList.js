@@ -6,7 +6,7 @@ import style from './style.scss'
   // <ul className="nav nav-list" style={style} styleName='messages-list-styles' >
 
 const MessagesList = ({ messages, _style }) => (
-  <ul className={"nav nav-list " + style.messageListStyles} style={_style} className={style.messageListStyles} >
+  <ul className={"nav nav-list " + style.messageListStyles} style={_style} >
     {messages.map( (_message,idx) =>(
         <Message key={idx} text={_message.text} />
       )

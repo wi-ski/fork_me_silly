@@ -1,0 +1,18 @@
+exports[`ColorPicker Link renders correctly 1`] = `
+<div
+  className="chatContainerStyles"
+  id="chinwag"
+  style={undefined}>
+  <ul
+    className="nav nav-list messageListStyles"
+    style={undefined} />
+  <label>
+    <input
+      className="messageInputStyles"
+      defaultValue="Hit me"
+      onKeyUp={[Function]}
+      style={undefined}
+      type="text" />
+  </label>
+</div>
+`;

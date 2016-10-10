@@ -8,7 +8,6 @@ const MessageInput = ({ onKeyUp, _style }) => (
 )
 
 MessageInput.propTypes = {
-  onKeyUp: PropTypes.func.isRequired
 }
 
 export default MessageInput;

@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import style from './style.scss'
 
 
 const Message = ({ text, onClick, _style }) => (
@@ -13,7 +12,6 @@ const Message = ({ text, onClick, _style }) => (
 )
 
 Message.propTypes = {
-  text: PropTypes.string.isRequired
 }
 export default Message;
 

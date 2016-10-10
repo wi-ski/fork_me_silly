@@ -1,18 +1,21 @@
-jest.dontMock('../index.js');
-
+cd 
+cd Proimport ChinWag from '../index'
+'use strict';
+jest.mock('react-dom');
+jest.mock('react/lib/ReactDefaultInjection');
 describe('ColorPicker', function() {
-  var React = require('react');
-  var ReactDOM = require('react-dom');
-  var TestUtils = require('react-addons-test-utils');
-  var ColorPicker;
 
-  beforeEach(function() {
-    ColorPicker = require('../index.js');
-  });
+    beforeEach(() => {
+        jest.resetModules()
+        global.Renderer= require('react-test-renderer');
+        global.React= require('react');
+        global.TestUtils= require('react-addons-test-utils');
+    });
 
-  it('should exist', function() {
-    // Render into document
-    var colorPicker = TestUtils.renderIntoDocument( (new ColorPicker()) );
-    expect(TestUtils.isCompositeComponent(colorPicker)).toBeTruthy();
-  });
+    test('Link renders correctly', () => {
+      const tree = Renderer.create(
+        <ChinWag onKeyUp={function(){}} messages={[]} styles={{}} />
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
 });

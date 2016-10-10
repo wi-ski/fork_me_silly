@@ -1,7 +1,6 @@
 import React from 'react';
 import MessagesList from './MessagesList'
 import MessageInput from './MessageInput'
-import CSSModules from 'react-css-modules';
 import style from './style.scss'
 
 const translateStyles = (styleObj) => {
@@ -23,5 +22,5 @@ const ChinWag = ({ onKeyUp, messages, styles }) => {
         </div>
     )
 }
-export default CSSModules(ChinWag, style);
+export default ChinWag;
 
