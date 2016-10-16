@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import SettingsMenu from 'components/SettingsMenu'
+import SettingsMenu from 'SettingsComponents/SettingsMenu'
 import { toggleSettingsMenuItem } from 'actions'
 import { settingsValueChange } from 'actions'
 

@@ -17,7 +17,7 @@ const store = createStore(reducer);
     if(window.debug){
         console.log = function(){};
     }
-}())
+}());
 
 
 

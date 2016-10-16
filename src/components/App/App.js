@@ -5,7 +5,6 @@ import ActiveSettingsContainer from 'containers/ActiveSettingsContainer'
 import ChinWag from 'containers/ChinWagContainer'
 import WalkThrough from 'modules/WalkThrough'
 import style from './style.scss'
-import CSSModules from 'react-css-modules';
 
 class App extends React.Component {
     componentDidMount() {
@@ -17,9 +16,9 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider>
-              <div id='application' styleName='app-styles'>
+              <div id='application' className={style.appStyles}>
                 <ActiveSettingsContainer />
-                <div id='app-view-container' styleName='app-view-container-styles'>
+                <div id='app-view-container' className={style.appViewContainerStyles}>
                   <div className='container'>
                     <div className="row">
                       <div className="col-md-4 col-md-offset-4">
@@ -44,7 +43,7 @@ class App extends React.Component {
          </Route>
          comment */
 
-export default CSSModules(App, style);
+export default App;
 
 
 

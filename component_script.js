@@ -14,6 +14,7 @@ var deleteFile = function(){
 }
 
 if(remove) return deleteFile();
+
 if (!fs.existsSync(component_name)){
     fs.mkdirSync(file_path);
     fs.mkdirSync(file_path + '__tests__');

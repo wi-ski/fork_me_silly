@@ -29,6 +29,8 @@ module.exports = {
         alias: {
                        src: __dirname + '/src',
                        components: __dirname + '/src/components',
+                       SettingsComponents: __dirname + '/src/components/SettingsComponents',
+                       SettingsTypes: __dirname + '/src/components/SettingsComponents/Types',
                        actions: __dirname + '/src/actions',
                        containers: __dirname + '/src/containers',
                        reducers: __dirname + '/src/reducers',
