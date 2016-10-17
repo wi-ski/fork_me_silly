@@ -1,3 +1,5 @@
+var express = require("express");
+var serveStatic = require("serve-static");
 // var options = { // defaults
 //     http: false,
 //     ip: "0.0.0.0",
@@ -24,26 +26,23 @@
 // Merge opts into options
 // for (var attrname in opt.options) { options[attrname] = opt.options[attrname]; }
 
-var fs = require('fs'),
-    path = require('path');
 
+const app  = express();
+const PORT = process.env.PORT || 8080;
+
+var fs = require('fs');
+var path = require('path');
 
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config.js');
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log(config.output.publicPath)
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
 
 new WebpackDevServer(webpack(config), {
-  hot: true,
-  inline:true,
   historyApiFallback:  {
     index: '/dist/'
+  },
+  proxy: {
+    "*" : "http://localhost:1234" // <- backend
   }
 }).listen(8080, 'localhost', function (err, result) {
   if (err) {
@@ -52,3 +51,5 @@ new WebpackDevServer(webpack(config), {
 
   console.log('Listening at http://localhost:8080/');
 });
+app.use(serveStatic(__dirname+"/dist"));
+app.listen(1234);

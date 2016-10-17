@@ -30,6 +30,7 @@
     "redux": "^3.6.0",
     "resolve-url": "^0.2.1",
     "resolve-url-loader": "^1.6.0",
+    "serve-static": "^1.11.1",
     "socket.io": "^1.5.0",
     "style-loader": "^0.13.1",
     "superagent": "^2.2.0",
@@ -67,8 +68,8 @@
   "scripts": {
     "test": "jest --verbose",
     "lint": "eslint src",
-    "_start": "node server.js",
-    "start": "webpack-dev-server --hot --progress --display-error-details --inline",
+    "start": "node server.js",
+    "_start": "webpack-dev-server --hot --progress --display-error-details --inline",
     "component": "node ./component_script.js"
   },
   "author": "",
