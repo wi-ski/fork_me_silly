@@ -5,7 +5,7 @@ import { settingsValueChange } from 'actions'
 
 const mapStateToProps = ( state, props ) => {
     return {
-      stylingOptions: state.Settings.stylingOptions
+      styleStates: state.Settings.styleStates
     }
 }
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import {SketchPicker} from 'react-color';
 
-const ColorPicker = ({initialConfig, simpleOnChange}) => {
+const ColorPicker = ({color, onChangeComplete, targetAttribute }) => {
   return (
     <SketchPicker
-      color={ initialConfig.color }
-      onChangeComplete={ (color)=>(simpleOnChange(color.hex)) }
+      color={ color }
+      onChange={ (color)=>(onChangeComplete(targetAttribute, color.hex)) }
     />
   )
 }
 
-export default ColorPicker
+module.exports = ColorPicker;

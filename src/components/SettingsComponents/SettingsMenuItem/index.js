@@ -1,3 +1,3 @@
 import SettingsMenuItem from './SettingsMenuItem';
 
-export default SettingsMenuItem;
+module.exports = SettingsMenuItem;

@@ -22,18 +22,19 @@ var _actions = {
         itemIdx
       }
   },
-   settingsValueChange:(itemKey,value) => {
+   settingsValueChange:(attrKey,value) => {
       return {
-        type: 'SETTINGS_VALUE_CHANGED',
-        itemKey,
+        type: 'SETTINGS_STYLE_CHANGE',
+        attrKey,
         value
       }
   }
 }
 Object.keys(_actions).forEach(function(action_name) {
   actions[action_name] = function(){
-    console.log(`Action name: [ ${action_name} ] called`)
-    return _actions[action_name].apply(null,arguments);
+    var resp = _actions[action_name].apply(null,arguments);
+    console.log(`Action name: [ ${action_name} ] called`,resp)
+    return resp;
   }
 });
 

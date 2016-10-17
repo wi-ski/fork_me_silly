@@ -1,2 +1,2 @@
 import ColorPicker from './ColorPicker.js'
-export default ColorPicker
+module.exports = ColorPicker

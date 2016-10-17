@@ -1,6 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
-
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
+        console.log(__dirname + '/dist/')
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
+        console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
@@ -38,7 +44,8 @@ module.exports = {
                }
     },
     output: {
-        path: path.join('./dist'),
+        path:__dirname + '/dist/',
+        // path: path.join('./dist'),
         publicPath: 'http://localhost:8080/',
         filename: 'bundle.js'
     },

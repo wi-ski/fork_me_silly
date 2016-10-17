@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import Application from './Application'
-import Settings from './Settings'
+import Application from './ApplicationReducers/index.js'
+import Settings from './SettingsReducers/index.js'
 
 const reducer = combineReducers({
     Application,

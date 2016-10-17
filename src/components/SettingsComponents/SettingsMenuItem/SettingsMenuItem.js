@@ -7,23 +7,10 @@ const handleNestedListToggle = (ListItem) => {
     // ListItem is the containing list item, not the nested one.  You can access the nested child by ListItem.nestedItems
 }
 
-const simpleOnChange = (color)=>{
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*COLOR VAL*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log(color)
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-    console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
-}
+const SettingsMenuItem = ({type, primaryText, secondaryText, onChangeComplete, adjustment,...others,}) => {
+    var req = require.context("../Types", true, /^\.\/.*\.jsx?$/); //This is some webpack bs for when it compiles require statement with expressions.
+    var GutComponent = req('./' + type + '/index.js');
 
-const SettingsMenuItem = ({type, primaryText, secondaryText, ...others}) => {
-    var GutComponent = require('../Types/ColorPicker').default;
-    // var foo = 'ColorPicker'
-    // var _filePath = '../Types/' + foo;
-    // var _filePath = `../Types/${type}`
-    // var GutComponent = require(_filePath).default;
-    // var GutComponent = require(`../Types/`);
     return (
               <ListItem
                 primaryText={primaryText}
@@ -32,8 +19,12 @@ const SettingsMenuItem = ({type, primaryText, secondaryText, ...others}) => {
                 nestedItems={[
                   <GutComponent
                     key={1}
-                    initialConfig={others}
-                    onChange={simpleOnChange}
+                    onChangeComplete = {adjustment ? 
+                      (key,val)=>( onChangeComplete(key, adjustment(val)) )
+                      :
+                      onChangeComplete
+                    }
+                    {...others}
                   />
                 ]}
               />

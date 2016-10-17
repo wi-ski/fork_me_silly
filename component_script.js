@@ -1,8 +1,9 @@
 var fs = require('fs');
 var exec = require('child_process').exec;
 var component_name = process.argv[2];
-var remove = process.argv[3];
-var file_path = __dirname + "/src/components/" + component_name + "/"
+var destinationFolder = process.argv[3];
+
+var file_path = destinationFolder ? __dirname + '/' + destinationFolder : __dirname + "/src/components/" + component_name + "/"
 var colors = require('colors');
 
 var deleteFile = function(){
@@ -13,7 +14,7 @@ var deleteFile = function(){
 
 }
 
-if(remove) return deleteFile();
+// if(remove) return deleteFile();
 
 if (!fs.existsSync(component_name)){
     fs.mkdirSync(file_path);
