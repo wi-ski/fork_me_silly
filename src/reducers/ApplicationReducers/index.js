@@ -1,5 +1,5 @@
 const initialState = {
-    Messages:[]
+    Messages:[],
 }
 
 const Application = (state=initialState, action) =>  {

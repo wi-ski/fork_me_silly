@@ -68,8 +68,8 @@
   "scripts": {
     "test": "jest --verbose",
     "lint": "eslint src",
-    "start": "node server.js",
-    "_start": "webpack-dev-server --hot --progress --display-error-details --inline",
+    "_start": "node server.js",
+    "start": "webpack-dev-server --hot --progress --display-error-details --inline",
     "component": "node ./component_script.js"
   },
   "author": "",

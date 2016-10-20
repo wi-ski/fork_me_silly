@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
-import SettingsMenu from 'SettingsComponents/SettingsMenu'
+import SettingsMenu from '../components/SocialMediaIconsSettings/SettingsMenu'
 import { toggleSettingsMenuItem } from 'actions'
 import { settingsValueChange } from 'actions'
 
 const mapStateToProps = ( state, props ) => {
     return {
       styleStates: state.Settings.styleStates,
+      Icons:state.Settings.Icons
     }
 }
 
@@ -18,9 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-const ActiveSettingsContainer = connect(
+const SocialMediaIconsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(SettingsMenu)
 
-export default ActiveSettingsContainer
+export default SocialMediaIconsContainer;

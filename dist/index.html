@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/intro.css">
     <link rel="stylesheet" type="text/css" href="/goodhabits.css">
@@ -8,9 +9,12 @@
     </style>
   <body>
     <div id="app-container">
-
     </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/intro.js"></script>
     <script src="bundle.js"></script>
+    <script>
+      var socket = io();
+    </script>
   </body>
 </html>

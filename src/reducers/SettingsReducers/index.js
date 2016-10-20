@@ -9,7 +9,49 @@ const initialState = { //Defaults
     },
     input:{
     }
-  }
+  },
+  Icons:[
+        {
+            attrs:{
+                type:'SelectOptionMenu',
+                primaryText:'Select the icon!',
+                secondaryText:'Social media icons are a great way to draw users to your product!',
+                value:'youtube'
+            }
+        },
+        {
+            attrs:{
+                type:'SelectOptionMenu',
+                primaryText:'Select the icon!',
+                secondaryText:'Social media icons are a great way to draw users to your product!',
+                value:'youtube'
+            }
+        },
+        {
+            attrs:{
+                type:'SelectOptionMenu',
+                primaryText:'Select the icon!',
+                secondaryText:'Social media icons are a great way to draw users to your product!',
+                value:'youtube'
+            }
+        },
+        {
+            attrs:{
+                type:'SelectOptionMenu',
+                primaryText:'Select the icon!',
+                secondaryText:'Social media icons are a great way to draw users to your product!',
+                value:'youtube'
+            }
+        },
+        {
+            attrs:{
+                type:'SelectOptionMenu',
+                primaryText:'Select the icon!',
+                secondaryText:'Social media icons are a great way to draw users to your product!',
+                value:'youtube'
+            }
+        }
+  ]
 };
 
 const assign = function(oldState,newState) {
