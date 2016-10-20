@@ -3,6 +3,7 @@ import { submitMessage } from '../actions'
 import SocialMediaIcons from '../components/SocialMediaIcons'
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     settingsStyles:state.Settings.styleStates,
     Icons: state.Settings.Icons

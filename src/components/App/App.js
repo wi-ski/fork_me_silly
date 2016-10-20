@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ActiveSettingsContainer from 'containers/ActiveSettingsContainer'
 import SocialMediaIconsSettings from 'containers/SocialMediaIconsSettingsContainer'
 import ChinWag from 'containers/ChinWagContainer'
-import SocialMediaIcons from '../SocialMediaIcons'
+import SocialMediaIcons from 'containers/SocialMediaIconsContainer'
 import WalkThrough from 'modules/WalkThrough'
 import style from './style.scss'
 
