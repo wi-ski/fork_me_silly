@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingsMenuItem from 'SettingsComponents/SettingsMenuItem';
+import SettingsMenuItem from '../SettingsMenuItem';
 import {settingsValueChange} from 'actions'
 import style from './style.scss'
 import CSSModules from 'react-css-modules';

@@ -28,6 +28,13 @@ var _actions = {
         attrKey,
         value
       }
+  },
+   settingsIconChange:(idx,value) => {
+      return {
+        type: 'SETTINGS_ICON_CHANGE',
+        idx,
+        value
+      }
   }
 }
 Object.keys(_actions).forEach(function(action_name) {

@@ -79,6 +79,13 @@ const Settings = (state=initialState, action) =>  {
           styleStates:newStyleOptions
         };
         return assign(state,newState);
+    case 'SETTINGS_ICON_CHANGE':
+        var Icons;
+        debugger
+        var newState = {
+          Icons:Icons
+        };
+        return assign(state,newState);
   default:
       return state;
   }
