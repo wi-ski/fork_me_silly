@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './style.scss'
-import {ListItem} from 'material-ui/List';
 
 const handleNestedListToggle = (ListItem) => {
     console.log("NESTED TOGGLED",arguments)
@@ -12,7 +11,7 @@ const SettingsMenuItem = ({type, primaryText, secondaryText, onChangeComplete, a
     var GutComponent = req('./' + type + '/index.js');
 
     return (
-              <ListItem
+              <li
                 primaryText={primaryText}
                 secondaryText={secondaryText}
                 onNestedListToggle={handleNestedListToggle}

@@ -1,10 +1,9 @@
 import React from 'react';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
+
 
 const SelectOptionMenu = ({value, onChangeComplete, targetAttribute, optionList }) => {
   return (
-    <DropDownMenu value={value} onChange={(event,index,value)=>(onChangeComplete(targetAttribute,value))}>
+    <ul value={value} onChange={(event,index,value)=>(onChangeComplete(targetAttribute,value))}>
       {
         optionList.map((option,idx)=>{
             var value,label,primaryText;
@@ -17,11 +16,11 @@ const SelectOptionMenu = ({value, onChangeComplete, targetAttribute, optionList 
             }
 
             return (
-                <MenuItem key={idx} value={value} style={{'fontFamily':value}} label={label} primaryText={primaryText} />
+                <li key={idx} value={value} style={{'fontFamily':value}} label={label} primaryText={primaryText} />
             )
         })
       }
-    </DropDownMenu>
+    </ul>
   )
 }
 

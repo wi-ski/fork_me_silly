@@ -3,8 +3,6 @@ import SettingsMenuItem from 'SettingsComponents/SettingsMenuItem';
 import {settingsValueChange} from 'actions'
 import style from './style.scss'
 import CSSModules from 'react-css-modules';
-import {List} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 
 const fonts = [
     {value:'Arial, sans-serif',primaryText:'Arial',primaryText:'Arial'},
@@ -43,10 +41,10 @@ const fonts = [
 const SettingsMenu = ({ styleStates, activeId, onChange }) => {
     return (
         <div styleName='side-bar-styles' id='side-bar-container'>
-            <List styleName='settings-menu-styles' className='sidebar-nav'>
+            <ul styleName='settings-menu-styles' className='sidebar-nav'>
                 {
                     [
-                        <SettingsMenuItem
+                        <li
                             type='NumericSlider'
                             primaryText='Font Size'
                             secondaryText='Size Yo Messages'
@@ -56,8 +54,8 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             min={0}
                             targetAttribute='messages::fontSize'
                         />,
-                        <Divider />,
-                        <SettingsMenuItem
+                        <hr />,
+                        <li
                             type='ColorPicker'
                             color={styleStates.messagesList['backgroundColor']}
                             primaryText='Messages Box Background Color'
@@ -65,8 +63,8 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             onChangeComplete={onChange}
                             targetAttribute='messagesList::backgroundColor'
                         />,
-                        <Divider />,
-                        <SettingsMenuItem
+                        <hr />,
+                        <li
                             type='ColorPicker'
                             color={styleStates.messages['color']}
                             primaryText='Font Color'
@@ -74,8 +72,8 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             onChangeComplete={onChange}
                             targetAttribute='messages::color'
                         />,
-                        <Divider />,
-                        <SettingsMenuItem
+                        <hr />,
+                        <li
                             type='ColorPicker'
                             color={styleStates.messages['backgroundColor']}
                             primaryText='Message Background Color'
@@ -84,8 +82,8 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             targetAttribute='messages::backgroundColor'
                             color='white' //initial color
                         />,
-                        <Divider />,
-                        <SettingsMenuItem
+                        <hr />,
+                        <li
                             type='NumericSlider'
                             primaryText='Message Spacing'
                             secondaryText='Space Yo Messages'
@@ -95,8 +93,8 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             min={0}
                             targetAttribute='messages::marginTop'
                         />,
-                        <Divider />,
-                        <SettingsMenuItem
+                        <hr />,
+                        <li
                             type='SelectOptionMenu'
                             primaryText='Choose Your Favorite Font'
                             secondaryText='Font are the best thing ever!'
@@ -104,11 +102,11 @@ const SettingsMenu = ({ styleStates, activeId, onChange }) => {
                             targetAttribute='messages::fontFamily'
                             optionList={fonts}
                         />,
-                        <Divider />
+                        <hr />
 
                     ].map((el,key) => React.cloneElement(el, {key} ))
                 }
-            </List>
+            </ul>
         </div>
     )
 }

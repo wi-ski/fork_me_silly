@@ -1,6 +1,4 @@
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 import ActiveSettingsContainer from 'containers/ActiveSettingsContainer'
 import ChinWag from 'containers/ChinWagContainer'
 import WalkThrough from 'modules/WalkThrough'
@@ -15,21 +13,18 @@ class App extends React.Component {
     }
     render() {
         return (
-            <MuiThemeProvider>
-              <div id='application' className={style.appStyles}>
-                <ActiveSettingsContainer />
-                <div id='app-view-container' className={style.appViewContainerStyles}>
-                  <div className='container'>
-                    <div className="row">
-                      <div className="col-md-4 col-md-offset-4">
-                        <ChinWag />
-                      </div>
-                    </div>
+          <div id='application' className={style.appStyles}>
+            <ActiveSettingsContainer />
+            <div id='app-view-container' className={style.appViewContainerStyles}>
+              <div className='container'>
+                <div className="row">
+                  <div className="col-md-4 col-md-offset-4">
+                    <ChinWag />
                   </div>
                 </div>
               </div>
-
-            </MuiThemeProvider>
+            </div>
+          </div>
         )
     }
 }
