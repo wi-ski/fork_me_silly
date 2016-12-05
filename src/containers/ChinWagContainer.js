@@ -2,6 +2,10 @@ import { connect } from 'react-redux'
 import { submitMessage } from '../actions'
 import ChinWag from '../components/ChinWag'
 
+import io from 'socket.io-client';
+const socket = io('', { path: '/api/chat' });
+
+
 const mapStateToProps = (state) => {
   return {
     settingsStyles:state.Settings.styleStates,

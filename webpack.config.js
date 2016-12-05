@@ -1,10 +1,17 @@
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {
-    inline:true,
-    hot: true,
     entry: [
         './src/index.js'
+    ],
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+        }
+      })
     ],
     module: {
         loaders: [
@@ -26,6 +33,8 @@ module.exports = {
     },
     resolve: {
         alias: {
+           Root:__dirname,
+           middleware:__dirname + '/src/client/middleware/',
            src: __dirname + '/src',
            components: __dirname + '/src/components',
            SettingsComponents: __dirname + '/src/components/SettingsComponents',

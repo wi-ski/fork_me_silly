@@ -1,10 +1,10 @@
 var express = require("express");
 var serveStatic = require("serve-static");
 var http = require('http');
+const SocketIO = require('socket.io')
 
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
-
 const app  = express();
 const PORT = process.env.PORT || 8080;
 
@@ -30,7 +30,8 @@ app.use(serveStatic("/"));
 
 var server = app.listen(8080);
 
-const io = require('socket.io')(server);
+
+const io = new SocketIO(server,{path:"/api/chat"});
 
 io.on('connection', (socket) => {
     console.log("|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*")
