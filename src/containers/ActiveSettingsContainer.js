@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import SettingsMenu from 'SettingsComponents/SettingsMenu'
-import { toggleSettingsMenuItem } from 'actions'
-import { settingsValueChange } from 'actions'
+import { toggleSettingsMenuItem,settingsValueChange } from 'actions'
 
 const mapStateToProps = ( state, props ) => {
     return {
