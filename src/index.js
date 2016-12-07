@@ -4,7 +4,9 @@ import { createStore,applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 import App from './components/App/'
-import Logger from 'middleware/logger_middleware.js'
+import logger from 'middleware/logger_middleware.js'
+import thunk from 'middleware/thunk.js'
+import webrtc from 'middleware/webrtc_middleware.js'
 
 // import { Router, useRouterHistory } from 'react-router';
 // import { createHashHistory } from 'history';
@@ -13,7 +15,11 @@ import Logger from 'middleware/logger_middleware.js'
 const store = createStore(
     reducer,
     applyMiddleware(
-        Logger
+        logger,
+        thunk,
+        webrtc(new WebRTC({  //This is where we pass the thingy.
+            ...config
+        }))
         //ErrReporting
         //etc etc
     )
